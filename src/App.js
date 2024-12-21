@@ -1,14 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import 'antd/dist/reset.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Main from './Layout/main';
+import Address from './Layout/address';
+import AddressEdit from './Layout/addressEdit';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p> 百度地图 </p>
-        <p> 站点管理 </p>
-      </header>
-    </div>
+  return (<BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Main />} />
+      <Route path='/address' element={<Address />} />
+      <Route path='/address_edit/:addressId' element={<AddressEdit />} />
+    </Routes>
+  </BrowserRouter>
   );
 }
 
